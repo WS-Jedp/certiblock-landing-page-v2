@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+    theme?: 'light' | 'dark';
+}
+
+const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     // Array de logos de marcas
@@ -29,11 +33,15 @@ const Header: React.FC = () => {
         <>
             <header
                 className={`fixed top-4 left-1/2 -translate-x-1/2 w-[96%] md:max-w-3xl z-50 transition-all duration-700 ease-out rounded-xl ${isScrolled
-                    ? 'bg-white/70 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.8)] py-2'
+                    ? theme === 'dark'
+                        ? 'bg-black/40 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] py-2'
+                        : 'bg-white/70 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.8)] py-2'
                     : 'bg-transparent backdrop-blur-none border border-transparent py-2.5'
                     }`}
                 style={isScrolled ? {
-                    background: 'linear-gradient(135deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.65) 100%)',
+                    background: theme === 'dark'
+                        ? 'linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%)'
+                        : 'linear-gradient(135deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.65) 100%)',
                     backdropFilter: 'blur(20px) saturate(180%)',
                     WebkitBackdropFilter: 'blur(20px) saturate(180%)',
                 } : {}}
@@ -41,7 +49,11 @@ const Header: React.FC = () => {
                 <div className="px-4 flex items-center justify-between gap-6">
                     {/* Logo - Compact & Bold */}
                     <div className="flex items-center gap-2">
-                        <img className='w-28 object-contain' src="/assets/images/logo.webp" alt="" />
+                        <img
+                            className={`w-28 object-contain transition-all duration-500 ${theme === 'dark' ? 'brightness-0 invert' : ''}`}
+                            src="/assets/images/logo.webp"
+                            alt=""
+                        />
                     </div>
 
                     {/* Navigation - Compact */}
@@ -50,7 +62,8 @@ const Header: React.FC = () => {
                             <a
                                 key={item}
                                 href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                                className="text-xs font-semibold text-black/60 hover:text-black transition-all relative group"
+                                className={`text-xs font-semibold transition-all relative group ${theme === 'dark' ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'
+                                    }`}
                             >
                                 {item}
                                 {/* Underline effect */}

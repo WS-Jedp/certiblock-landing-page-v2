@@ -89,7 +89,7 @@ function App() {
 
       // Hero Fade Out Animation
       gsap.to(heroRef.current, {
-        opacity: 0.2,
+        opacity: 0.24,
         ease: "none", // Linear scrub for direct control
         scrollTrigger: {
           trigger: phoneSectionRef.current,
@@ -391,7 +391,7 @@ function App() {
 
       // --- FOOTER ANIMATIONS ---
       gsap.fromTo(footerSectionRef.current,
-        { opacity: 0 },
+        { opacity: 1 },
         {
           opacity: 1,
           duration: 1,
@@ -404,7 +404,7 @@ function App() {
         }
       );
       gsap.fromTo(footerBrandRef.current,
-        { opacity: 0, y: 30 },
+        { opacity: 1, y: 30 },
         {
           opacity: 1, y: 0,
           scrollTrigger: {

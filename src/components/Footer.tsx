@@ -10,7 +10,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ footerRef, brandRef, linksRefs, bottomBarRef }) => {
 
     return (
-        <footer ref={footerRef} className="bg-black text-white py-24 px-6 relative z-20 overflow-hidden opacity-0">
+        <footer ref={footerRef} className="bg-black text-white py-24 px-6 relative z-20 overflow-hidden">
             {/* Tech Grid Pattern */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
                 <div className="absolute inset-0" style={{
