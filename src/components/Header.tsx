@@ -9,9 +9,9 @@ const Header: React.FC = () => {
         { name: 'DIM', logo: '/assets/logos/deportivo-independiente-medellin.svg' },
         { name: 'Atlético Nacional', logo: '/assets/logos/atlanta-nacional.svg' },
         { name: 'Nike', logo: '/assets/logos/nike-4-2.svg' },
-        { name: 'Puntos Colombia', logo: '/assets/logos/puntos-colombia-allies.svg' },
-        { name: 'Cadena', logo: '/assets/logos/cadena-allies.svg' },
-        { name: 'Naturanja', logo: '/assets/logos/naturanja-allies.svg' },
+        { name: '', logo: '/assets/logos/puntos-colombia-allies.svg' },
+        { name: '', logo: '/assets/logos/cadena-allies.svg' },
+        { name: '', logo: '/assets/logos/naturanja-allies.svg' },
         { name: 'Starbucks', logo: '/assets/logos/starbucks-coffee.svg' },
         { name: 'Club Colombia', logo: '/assets/logos/cerveza-club-colombia.svg' },
     ];

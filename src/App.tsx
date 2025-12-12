@@ -89,7 +89,7 @@ function App() {
 
       // Hero Fade Out Animation
       gsap.to(heroRef.current, {
-        opacity: 0,
+        opacity: 0.2,
         ease: "none", // Linear scrub for direct control
         scrollTrigger: {
           trigger: phoneSectionRef.current,
@@ -531,7 +531,7 @@ function App() {
       <Header />
 
       {/* Hero / Scratch Section - Fixed at top */}
-      <div ref={heroRef} className="fixed top-0 left-0 w-full h-[90vh] z-0">
+      <div ref={heroRef} className="fixed top-0 left-0 w-full h-[100vh] z-0">
         <Hero onReveal={handleReveal} forceReveal={forceReveal} />
       </div>
 
@@ -579,7 +579,7 @@ function App() {
             </div>
 
             {/* Context Switcher - Fixed position during scroll, moves up during onboarding */}
-            <div ref={carouselRef} className="-mt-3 z-20 w-full max-w-full overflow-x-hidden overflow-y-visible transform-gpu">
+            <div ref={carouselRef} className="-mt-3 md:-mt-9 z-20 w-full max-w-full overflow-x-hidden overflow-y-visible transform-gpu">
               <ContextCarousel
                 currentUseCase={currentUseCase}
                 onUseCaseChange={setCurrentUseCase}

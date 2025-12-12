@@ -278,7 +278,7 @@ const Hero: React.FC<HeroProps> = ({ onReveal, forceReveal }) => {
         <div className="relative w-full h-full flex flex-col items-center justify-center bg-transparent pointer-events-none">
 
             {/* Tech Headline */}
-            <div className="text-center mb-6 pointer-events-auto perspective-1000 text-xs">
+            <div className="text-center mb-6 pointer-events-auto perspective-1000 text-sm md:text-lg">
                 <h1 ref={titleRef} className="px-3 md:text-7xl font-bold text-black mb-4 tracking-tight leading-tight transform-gpu" style={{ transformStyle: 'preserve-3d' }}>
                     Protege tu marca con <br />
                     <span className="text-[#00FF88] relative inline-block">
