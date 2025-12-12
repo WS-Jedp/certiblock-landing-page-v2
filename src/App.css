@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Identity Colors - "Verified Reality" */
+  --color-bg-primary: #FFFFFF;
+  /* Certiblock White - Transparencia Absoluta */
+  --color-bg-secondary: #F4F4F5;
+  /* Vapor Grey - Profundidad sutil */
+  --color-text-primary: #000000;
+  /* Truth Black - Inmutabilidad */
+  --color-text-secondary: #64748B;
+  /* Gris medio para textos secundarios */
+
+  /* UI Elements */
+  --color-border: #E1E1E1;
+  /* Silver Scratch */
+  --color-scratch-surface: #E1E1E1;
+  /* Silver Scratch - Capa raspable */
+  --color-phone-frame: #000000;
+  /* Truth Black para marcos */
+  --color-accent: #00FF88;
+  /* Certi Signal Green - El láser verde */
+
+  /* Elevation & Effects */
+  --shadow-elevation-low: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-elevation-medium: 0 4px 15px rgba(0, 255, 136, 0.15);
+  --shadow-elevation-high: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+  --shadow-neon: 0 0 20px rgba(0, 255, 136, 0.4);
+  --shadow-neon-strong: 0 0 40px rgba(0, 255, 136, 0.6);
+}
+
+body {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  /* Inter o Manrope - Clean Tech Typography */
+  font-family: 'Inter', 'Manrope', system-ui, -apple-system, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Technical Data Font */
+.font-mono-tech {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Keyframe Animations */
+@keyframes noise {
+  0%, 100% { background-position: 0 0; }
+  10% { background-position: -5% -10%; }
+  20% { background-position: -15% 5%; }
+  30% { background-position: 7% -25%; }
+  40% { background-position: 20% 25%; }
+  50% { background-position: -25% 10%; }
+  60% { background-position: 15% 5%; }
+  70% { background-position: 0% 15%; }
+  80% { background-position: 25% 35%; }
+  90% { background-position: -10% 10%; }
+}
+
+@keyframes pulse-neon {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 40px rgba(0, 255, 136, 0.6);
+  }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 10px rgba(0, 255, 136, 0.3)); }
+  50% { filter: brightness(1.2) drop-shadow(0 0 20px rgba(0, 255, 136, 0.6)); }
+}
+
+/* Utility Classes */
+.animate-noise { animation: noise 0.2s infinite; }
+.animate-pulse-neon { animation: pulse-neon 2s ease-in-out infinite; }
+.animate-scan { animation: scan-line 2s linear infinite; }
+.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+
+/* Neon Text Effect */
+.text-neon {
+  color: #00FF88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+/* Tech Border */
+.border-tech {
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  box-shadow: inset 0 0 10px rgba(0, 255, 136, 0.05);
+}
