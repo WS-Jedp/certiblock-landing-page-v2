@@ -12,6 +12,7 @@ const Hero: React.FC<HeroProps> = ({ onReveal, forceReveal }) => {
     const stickerRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLDivElement>(null);
     const subtitleRef = useRef<HTMLParagraphElement>(null);
+    const instructionRef = useRef<HTMLDivElement>(null);
     const [isRevealed, setIsRevealed] = useState(false);
 
     const revealAll = useCallback((isManual: boolean = false) => {
@@ -324,6 +325,18 @@ const Hero: React.FC<HeroProps> = ({ onReveal, forceReveal }) => {
                     ease: "power2.out"
                 });
             }
+
+            if (instructionRef.current) {
+                // Instruction text moves slowest - stays visible longer
+                gsap.to(instructionRef.current, {
+                    y: scrollProgress * 100,
+                    z: scrollProgress * -60,
+                    opacity: 1 - (scrollProgress * 0.6),
+                    scale: 1 - (scrollProgress * 0.08),
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -481,10 +494,13 @@ const Hero: React.FC<HeroProps> = ({ onReveal, forceReveal }) => {
             </div>
 
             {/* Tech Instruction */}
-            <div className="mt-12 flex items-center justify-center gap-3 pointer-events-auto">
-                <div className="w-2 h-2 rounded-full bg-[#00FF88] animate-pulse shadow-[0_0_10px_#00FF88]"></div>
-                <p className="text-black/70 text-sm font-light tracking-wide">
-                    <span className='font-bold text-black/90'>¿Es auténtico?</span> La respuesta, a un scan de distancia.
+            <div ref={instructionRef} className="mt-7 flex items-center justify-center pointer-events-auto max-w-xl transform-gpu" style={{ transformStyle: 'preserve-3d' }}>
+                <p className="text-sm tracking-tight text-center">
+                    <span className="text-black/90 font-semibold italic relative inline-block">
+                        <span className="relative z-10">¿Es auténtico?</span>
+                        <span className="absolute bottom-0 left-0 right-0 h-[40%] bg-[#00FF88]/30 -z-0"></span>
+                    </span>
+                    <span className="text-black/60 font-light tracking-wide"> La respuesta, a un scan de distancia.</span>
                 </p>
             </div>
         </div>
