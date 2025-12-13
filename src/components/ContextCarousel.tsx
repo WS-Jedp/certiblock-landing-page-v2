@@ -15,19 +15,19 @@ interface CaseData {
 
 const CASES: CaseData[] = [
     {
-        id: 'industrial',
+        id: 'DPA',
         title: 'Activo Digital (DA)',
         description: 'Rastrea el mantenimiento, estado en tiempo real y ciclo de vida de maquinaria pesada.',
         icon: '🏭'
     },
     {
-        id: 'fashion',
+        id: 'DLA',
         title: 'Moda de Lujo',
         description: 'Verifica la autenticidad y procedencia de prendas de alta gama.',
         icon: '👗'
     },
     {
-        id: 'art',
+        id: 'LUX',
         title: 'Arte y NFT',
         description: 'Conecta arte físico con gemelos digitales y contratos inteligentes.',
         icon: '🎨'

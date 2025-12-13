@@ -19,7 +19,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 function App() {
   const [isScratched, setIsScratched] = useState(false);
   const [forceReveal, setForceReveal] = useState(false);
-  const [currentUseCase, setCurrentUseCase] = useState<UseCase>('industrial');
+  const [currentUseCase, setCurrentUseCase] = useState<UseCase>('DPA');
   const [currentStep, setCurrentStep] = useState(-1);
 
   const mainRef = useRef<HTMLDivElement>(null);

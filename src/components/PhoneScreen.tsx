@@ -7,7 +7,7 @@ import ReportButton from './certiblcok-emulator/ReportButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export type UseCase = 'industrial' | 'fashion' | 'art';
+export type UseCase = 'DPA' | 'DLA' | 'LUX';
 
 interface PhoneScreenProps {
     currentUseCase: UseCase;
@@ -84,10 +84,10 @@ const OnboardingSection: React.FC<OnboardingSectionProps> = ({ stepIndex, curren
 
 // Data for each use case to populate the generic layout
 const USE_CASE_DATA = {
-    industrial: {
+    DPA: {
         headerImage: "/assets/images/certiblock-product.png",
         headerBg: "bg-emerald-300/20 border-blue-500/20",
-        headerProductLogo: "/assets/images/certiblock-lx.webp",
+        headerProductLogo: "/assets/images/certiblock-dpa.webp",
         headerIconBg: "bg-emerald-500/20",
         productName: "Motor Industrial V8",
         productDesc: "Motor de inducción trifásico de alto rendimiento para aplicaciones industriales pesadas.",
@@ -103,10 +103,10 @@ const USE_CASE_DATA = {
             "Reportar cualquier anomalía o daño en el producto directamente desde aquí."
         ]
     },
-    fashion: {
+    DLA: {
         headerImage: "/assets/images/certiblock-product-2.png",
         headerBg: "bg-emerald-300/20 border-blue-500/20",
-        headerProductLogo: "/assets/images/certiblock-lx.webp",
+        headerProductLogo: "/assets/images/certiblock-dla.webp",
         headerIconBg: "bg-emerald-500/20",
         productName: "Abrigo Edición Limitada",
         productDesc: "Abrigo de cuero italiano hecho a mano de la Colección Invierno 2025.",
@@ -122,7 +122,7 @@ const USE_CASE_DATA = {
             "Reportar cualquier daño o problema con el artículo directamente desde aquí."
         ]
     },
-    art: {
+    LUX: {
         headerImage: "/assets/images/certiblock-product.png",
         headerBg: "bg-emerald-300/20 border-blue-500/20",
         headerProductLogo: "/assets/images/certiblock-lx.webp",
@@ -233,7 +233,7 @@ const PhoneScreen: React.FC<PhoneScreenProps> = ({ currentUseCase, currentStep =
 
                         {/* Botones de acciones (Mock UI) */}
                         <div className='absolute bottom-0 right-0 m-auto flex flex-col items-end justify-between w-auto h-full p-1'>
-                            <img src={data.headerProductLogo} alt="Product" className="w-12 h-12 object-contain" />
+                            <img src={data.headerProductLogo} alt="Product" className={`w-12 h-12 object-contain ${currentUseCase === 'LUX' ? '' : 'brightness-0'}`} />
                             <div className='flex flex-col items-end justify-end space-y-1'>
                                 <div className='w-auto py-2 px-3 bg-green-500/90 rounded-2xl text-xs text-center flex items-center justify-center'>
                                     <span className='text-[9px] font-light'>

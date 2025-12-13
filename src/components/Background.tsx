@@ -11,9 +11,9 @@ const Background: React.FC<BackgroundProps> = ({ currentUseCase }) => {
     // Particle colors based on Use Case - More subtle
     const getParticleColor = (useCase: UseCase) => {
         switch (useCase) {
-            case 'industrial': return 'rgba(0, 255, 136, 0.15)'; // Neon Green - Reduced opacity
-            case 'fashion': return 'rgba(157, 0, 255, 0.15)'; // Violet - Reduced opacity
-            case 'art': return 'rgba(0, 194, 255, 0.15)'; // Cyan - Reduced opacity
+            case 'DPA': return 'rgba(0, 255, 136, 0.15)'; // Neon Green - Reduced opacity
+            case 'DLA': return 'rgba(157, 0, 255, 0.15)'; // Violet - Reduced opacity
+            case 'LUX': return 'rgba(0, 194, 255, 0.15)'; // Cyan - Reduced opacity
             default: return 'rgba(0, 255, 136, 0.15)';
         }
     };
